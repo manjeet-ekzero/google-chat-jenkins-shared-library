@@ -1,1 +1,0 @@
-# google-chat-jenkins-shared-library
