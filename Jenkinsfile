@@ -25,7 +25,6 @@ podTemplate(label: buildLabel, containers: [
                 echo "Checkout Done"
             }
             stage('Notification') {
-                throw new Exception("Something Weired happened")
                 postAlways()
             }
         }
@@ -39,13 +38,13 @@ podTemplate(label: buildLabel, containers: [
 
 def postFailure(e) {
     currentBuild.result = "FAILURE"
-    msg =  'HEAD_TITLE==title;;HEAD_SUBTITLE==subtitle;;MESSAGE==failure'
+    msg =  'failed: ' + e
     sendNotification("Failure", msg)
 }
 
 def postAlways() {
     currentBuild.result = "SUCCESS"
-    msg =  'HEAD_TITLE==title;;HEAD_SUBTITLE==subtitle;;MESSAGE==success'
+    msg =  'Successfully deployed'
     sendNotification("Success", msg)
 }
 

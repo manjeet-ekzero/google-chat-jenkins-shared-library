@@ -42,7 +42,7 @@ def sendNotification(
                         "widgets": [
                             {
                                 "keyValue": {
-                                    "topLabel": "<b>Git Commit</b>",
+                                    "topLabel": "<b>Git Commit<b>",
                                     "content": "${gitCommit}",
                                 }
                             },
@@ -52,6 +52,17 @@ def sendNotification(
                                     "content": "${authorName}"
                                 }
                             }
+                        ]
+                    },
+                    {
+                        "header": "Additional Message",
+                        "widgets": [
+                            {
+                                "keyValue": {
+                                    "topLabel": "Message",
+                                    "content": "${msg}",
+                                }
+                            },
                         ]
                     },
                     {
