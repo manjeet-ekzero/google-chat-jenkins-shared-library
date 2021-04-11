@@ -42,7 +42,7 @@ def sendNotification(
                         "widgets": [
                             {
                                 "keyValue": {
-                                    "topLabel": "<b>Git Commit<\/b>",
+                                    "topLabel": "<b>Git Commit<\\/b>",
                                     "content": "${gitCommit}",
                                 }
                             },
