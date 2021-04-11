@@ -53,7 +53,7 @@ def sendNotification(String status, String msg) {
 
     String google_chat_url = "https://chat.googleapis.com/v1/spaces/AAAAouuYqOI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Trd0apwSaH_4mF6yYTpVXLTtvGDfwrdGEVdZJ3KnX7w%3D"
     String branch_name = "${env.BRANCH_NAME}"
-    String build_number = "${JOB_ID}"
+    String build_number = "${env.BUILD_NUMBER}"
     String job_name = env.JOB_NAME.split('/')[0]
     String job_url = "${env.BUILD_URL}console"
     googleChat.sendNotification(google_chat_url,job_name,branch_name,build_number,status,gitCommit,authorName,job_url,gitRepoUrl,msg)
