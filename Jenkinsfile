@@ -56,15 +56,5 @@ def sendNotification(String status, String msg) {
     String build_number = "${JOB_ID}"
     String job_name = env.JOB_NAME.split('/')[0]
     String job_url = "${env.BUILD_URL}console"
-    googleChat.sendNotification(
-    google_chat_url,
-    job_name,
-    branch_name,
-    build_number,
-    status,
-    gitCommit,
-    authorName,
-    job_url,
-    gitRepoUrl,
-    msg
-    )
+    googleChat.sendNotification(google_chat_url,job_name,branch_name,build_number,status,gitCommit,authorName,job_url,gitRepoUrl,msg)
+}
