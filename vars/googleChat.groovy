@@ -89,6 +89,7 @@ def sendNotification(
     """
 
     sh """
+        set +x
         curl -H 'Content-Type: application/json' \
         -X POST "${google_chat_url}" \
         --data '${template}'
