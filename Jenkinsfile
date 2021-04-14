@@ -37,20 +37,18 @@ podTemplate(label: buildLabel, containers: [
 
 
 def postFailure(e) {
-    currentBuild.result = "FAILURE"
-    msg =  'failed: ' + e
-    sendNotification("Failure", msg)
+    msg =  "<font color=\"#ff0000\">failed due to : ${e}</font>"
+    sendNotification("<font color=\"#ff0000\">FAILED</font>", msg)
 }
 
 def postAlways() {
-    currentBuild.result = "SUCCESS"
     msg =  'Successfully deployed'
-    sendNotification("Success", msg)
+    sendNotification("<font color=\"#00ff00\">SUCCESS</font>", msg)
 }
 
 def sendNotification(String status, String msg) {
 
-    String google_chat_url = "https://chat.googleapis.com/v1/spaces/AAAAouuYqOI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Trd0apwSaH_4mF6yYTpVXLTtvGDfwrdGEVdZJ3KnX7w%3D"
+    String google_chat_url = "https://chat.googleapis.com/v1/spaces/AAAAJ9U7ygU/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=7gJ6PAxUFUFcLVyfedE1IVcQv6sf52lsOBUWTI9tfwk%3D"
     String branch_name = "${env.BRANCH_NAME}"
     String build_number = "${env.BUILD_NUMBER}"
     String job_name = env.JOB_NAME.split('/')[0]

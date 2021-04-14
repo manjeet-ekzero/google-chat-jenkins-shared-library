@@ -24,15 +24,13 @@ def sendNotification(
                         "header": "Build Info",
                         "widgets": [
                             {
-                                "keyValue": {
-                                    "topLabel": "Build No.",
-                                    "content": "${build_number}",
+                                "textParagraph": {
+                                    "text": "<b>Build No. :</b><br>${build_number}"
                                 }
                             },
                             {
-                                "keyValue": {
-                                    "topLabel": "Status",
-                                    "content": "${status}"
+                                "textParagraph": {
+                                    "text": "<b>Status :</b><br>${status}"
                                 }
                             }
                         ]
@@ -41,15 +39,13 @@ def sendNotification(
                         "header": "Git Info",
                         "widgets": [
                             {
-                                "keyValue": {
-                                    "topLabel": "<b>Git Commit</b>",
-                                    "content": "${gitCommit}",
+                                "textParagraph": {
+                                    "text": "<b>Git Commit :</b><br>${gitCommit}"
                                 }
                             },
                             {
-                                "keyValue": {
-                                    "topLabel": "Git aurther",
-                                    "content": "${authorName}"
+                                "textParagraph": {
+                                    "text": "<b>Git aurther :</b><br>${authorName}"
                                 }
                             }
                         ]
@@ -58,9 +54,8 @@ def sendNotification(
                         "header": "Additional Message",
                         "widgets": [
                             {
-                                "keyValue": {
-                                    "topLabel": "Message",
-                                    "content": "${msg}",
+                                "textParagraph": {
+                                    "text": "<b>Message :</b><br>${msg}"
                                 }
                             },
                         ]
